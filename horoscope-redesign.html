@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horoscope Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .text-grey {
+            color: #C3C3C3 !important;
+        }
+
+        .bg-aries-pastel {
+            background-color: #FFF9E7 !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-taurus-pastel {
+            background-color: #FFE2DD !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-gemini-pastel {
+            background-color: #DEDBF9 !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-cancer-pastel {
+            background-color: #F1FFDD !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-leo-pastel {
+            background-color: #FFE8D6 !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-virgo-pastel {
+            background-color: #FFDEED !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-libra-pastel {
+            background-color: #FFECBE !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-scorpio-pastel {
+            background-color: #FFDCF9 !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-sagitarius-pastel {
+            background-color: #F3F7FF !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-capricorn-pastel {
+            background-color: #FFEFE0 !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-aquarius-pastel {
+            background-color: #E6EAC5 !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .bg-pisces-pastel {
+            background-color: #DDF7FB !important;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .horoscope-card {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 50px auto;
+            border: 1px solid #E3E3E3;
+        }
+
+        .horoscope-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .horoscope-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .horoscope-header h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .horoscope-content {
+            margin-top: 10px;
+        }
+
+        .divider {
+            border-top: 1px solid #ddd;
+            margin: 15px 0;
+        }
+
+        .horoscope-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .horoscope-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .horoscope-section h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .horoscope-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .horoscope-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .horoscope-list i {
+            color: red;
+        }
+
+        .horoscope-link {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .horoscope-link:hover {
+            text-decoration: underline;
+        }
+
+        .border-right-12 {
+            border-right: #DDDDDD solid 1px;
+            margin-left: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .border-right-12 {
+                border-right: none;
+                border-bottom: #DDDDDD solid 1px;
+                margin-left: 0;
+                padding-left: 0;
+                padding-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="shadow">
+        <div class="bg-dark d-none d-md-block">
+            <div class="container">
+                <div class="d-flex">
+                    <span class="text-light">Sunday, December 8, 2024</span>
+                    <span class="mx-5">
+                        <a href="#" class="text-light text-decoration-none">Sign in /</a>
+                        <a href="#" class="text-light text-decoration-none">Join</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container d-none d-md-block">
+            <div class="row my-3">
+                <div class="col-lg-4">
+                    <img src="assets/ylc-logo-none-tagline.png" alt="ylc logo" class="img-fluid my-5" width="280">
+                </div>
+                <div class="col-lg-8">
+                    <div class="card bg-grey-light">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center">
+                                <p class="text-grey my-5">Ads</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <nav class="navbar navbar-expand-lg w-100">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="d-block d-md-none">
+                            <div class="d-flex justify-content-center">
+                                <img src="assets/ylc-logo-none-tagline.png" alt="ylc code">
+
+                            </div>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark fs-10 text-uppercase" href="#">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Money
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Super</a></li>
+                                        <li><a class="dropdown-item" href="#">Investing</a></li>
+                                        <li><a class="dropdown-item" href="#">Tax</a></li>
+                                        <li><a class="dropdown-item" href="#">Insurance</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Retirement</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Centerelink</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Lifestyle</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Property</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Health</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Travel</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Life</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Games</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Forum</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark fs-10 text-uppercase" href="#">Podcast</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark fs-10 text-uppercase dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">option1</a></li>
+                                        <li><a class="dropdown-item" href="#">option2</a></li>
+                                        <li><a class="dropdown-item" href="#">option3</a></li>
+                                        <li><a class="dropdown-item" href="#">option4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <button class="btn me-3 " id="search-button">
+                                <img src="assets/icon/search-ic-loop.png" alt="search-ic-loop.png">
+                            </button>
+                            <form class="d-none" id="search-form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                                        aria-describedby="search-button">
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+
+        </div>
+    </header>
+    <div class="container mb-5">
+        <div class="row">
+            <small class="d-block my-4 text-grey">Home &gt; Games &gt; Free daily Australian horoscopes</small>
+        </div>
+        <div class="row">
+            <div class="col-lg-10">
+                <h3 class="fw-bold mb-4">Free daily Australian horoscopes</h3>
+                <p class="mb-4">Discover what the stars have aligned for you today - from romance and fortune to career
+                    moves and
+                    personal growth. Our daily Australian horoscopes tap into ancient celestial wisdom to illuminate
+                    your path forward.</p>
+                <p class="mb-4">Ready to explore your cosmic forecast? Select your zodiac sign below for your free daily
+                    Australian
+                    horoscope.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5">
+        <div class="row mb-3">
+            <h6 class="fw-bold mb-2">
+                Click on your star sign to read your free daily Australian horoscope.
+            </h6>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-aries-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/aries.png" alt="aries">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">ARIES</p>
+                        <p class="fs-6">21 Mar – 19 Apr</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-taurus-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/taurus.png" alt="taurus">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">TAURUS</p>
+                        <p class="fs-6">20 Apr – 20 May</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-gemini-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/gemini.png" alt="gemini">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">GEMINI</p>
+                        <p class="fs-6">21 May – 20 Jun</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-cancer-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/cancer.png" alt="cancer">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">CANCER</p>
+                        <p class="fs-6">21 Jun – 22 Jul</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-leo-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/leo.png" alt="leo">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">LEO</p>
+                        <p class="fs-6">23 Jul – 22 Aug</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-virgo-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/virgo.png" alt="virgo">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">VIRGO</p>
+                        <p class="fs-6">23 Aug – 22 Sept</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-libra-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/libra.png" alt="libra">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">LIBRA</p>
+                        <p class="fs-6">23 Sep – 22 Oct</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-scorpio-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/scorpio.png" alt="scorpio">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">SCORPIO</p>
+                        <p class="fs-6">23 Oct – 21 Nov</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-sagitarius-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/sagitarius.png" alt="sagitarius">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">SAGITARIUS</p>
+                        <p class="fs-6">22 Nov – 21 Dec</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-capricorn-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/capricorn.png" alt="capricorn">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">CAPRICORN</p>
+                        <p class="fs-6">22 Dec – 19 Jan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-aquarius-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/aquarius.png" alt="aquarius">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">AQUARIUS</p>
+                        <p class="fs-6">20 Jan – 18 Feb</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-body text-center bg-pisces-pastel">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/horoscope/pieces.png" alt="pisces">
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <p class="fw-bold fs-6">PISCES</p>
+                        <p class="fs-6">19 Feb– 20 Mar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/aries.png" class="bg-aries-pastel mx-3" alt="Aries Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">ARIES (March 21 - April 19)</h3>
+                            <p>Born under the blazing sign of the Ram, you're a natural-born trailblazer led by Mars,
+                                the planet
+                                of
+                                action and courage.
+                                As the first sign of the zodiac, you spark the cosmic wheel into motion with your fierce
+                                spirit
+                                and
+                                unstoppable drive.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Warrior Spirit:</h4>
+                        <p>While your lightning-quick decisions and burning desire to be first can sometimes lead to
+                            spontaneous
+                            choices,
+                            it's exactly this raw energy that makes you such a powerful force.</p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Aries horoscope</a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Fire Element Gifts:</h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Magnetic
+                                confidence that
+                                draws others to your flame
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Bold
+                                leadership that
+                                inspires action</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Passionate
+                                determination
+                                to chase your dreams</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Natural
+                                courage to venture
+                                where others hesitate
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/taurus.png" class="bg-taurus-pastel mx-3" alt="taurus Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">TAURUS (April 20 - May 20)</h3>
+                            <p>Grounded in the richness of Earth, you're the steadfast bull guided by Venus, the planet
+                                of beauty and abundance. As the anchor of the zodiac, you transform raw potential into
+                                tangible reality with your unwavering determination.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Warrior Spirit:</h4>
+                        <p>While your love of routine and comfort can make you resistant to change, it's this very
+                            stability that allows you to build lasting foundations. When you embrace your inner strength
+                            mindfully, you create beauty that endures through ages.</p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Taurus
+                            horoscope</a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Fire Element Gifts:</h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Remarkable
+                                patience that moves mountains
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Natural
+                                talent for creating comfort and luxury</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Rock-solid
+                                reliability that others depend on</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Deep
+                                appreciation for life's sensual pleasures
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/gemini.png" class="bg-gemini-pastel mx-3" alt="gemini Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">GEMINI (May 21 - June 20)</h3>
+                            <p>Dancing through life with dual perspectives, you're the cosmic twins guided by Mercury,
+                                the messenger of the gods. As the zodiac's great communicator, you weave connections and
+                                ideas into brilliant new patterns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Messenger Spirit:</h4>
+                        <p>While your multiple interests can sometimes scatter your focus, it's this very diversity that
+                            makes you such a fascinating force. When you harness your mental agility mindfully, you
+                            become the ultimate synthesiser of knowledge.</p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Gemini
+                            horoscope</a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Air Element Gifts:</h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Quick-silver
+                                intellect that sparkles with ideas
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Natural charm
+                                that bridges all social circles</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Versatile
+                                talents that adapt to any situation</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Curious mind
+                                that never stops exploring
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/cancer.png" class="bg-cancer-pastel mx-3" alt="cancer Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">CANCER (June 21 - July 22)</h3>
+                            <p>Flowing with the tides of emotion, you're the intuitive crab guided by the Moon, keeper
+                                of memories and feelings. As the zodiac's nurturer, you create safe harbors where others
+                                can find their emotional home.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Nurturing Spirit:</h4>
+                        <p>While your sensitivity can sometimes make you retreat into your shell, it's this very depth
+                            that makes you such a compassionate force. When you channel your emotional intelligence
+                            mindfully, you create unbreakable bonds of love and understanding.
+                        </p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Cancer
+                            horoscope</a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Water Element Gifts: </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Quick-silver
+                                intellect that sparkles with ideas
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Natural charm
+                                that bridges all social circles</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Versatile
+                                talents that adapt to any situation</li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Curious mind
+                                that never stops exploring
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/leo.png" class="bg-leo-pastel mx-3" alt="leo Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">LEO (July 23 - August 22)</h3>
+                            <p>Radiating with solar power, you're the majestic lion guided by the Sun itself, the center
+                                of our cosmic dance. As the zodiac's natural performer, you illuminate the world with
+                                your warmth and creative brilliance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Royal Spirit:</h4>
+                        <p>While your love of the spotlight can sometimes overshadow others, it's this very radiance
+                            that makes you such an inspiring force. When you shine your light mindfully, you have the
+                            power to warm hearts and ignite dreams.
+                        </p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Leo horoscope</a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Fire Element Gifts:
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Natural
+                                charisma that commands attention
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Generous
+                                spirit that uplifts others
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Creative
+                                power that brings joy to life
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Regal
+                                confidence that inspires loyalty
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/virgo.png" class="bg-virgo-pastel mx-3" alt="virgo Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">VIRGO (August 23 - September 22)</h3>
+                            <p>Moving with precise grace, you're the cosmic perfectionist guided by Mercury, the planet
+                                of analysis and communication. As the zodiac's master craftsperson, you transform chaos
+                                into elegance with your careful attention to detail.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Craftsperson Spirit:</h4>
+                        <p>While your quest for perfection can sometimes lead to overthinking, it's this very precision
+                            that makes you such a valuable force. When you apply your talents mindfully, you create
+                            order from chaos and beauty from simplicity.
+                        </p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Virgo horoscope</a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Earth Element Gifts:
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Keen
+                                analytical mind that solves puzzles
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Healing touch
+                                that makes things whole
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Precise skill
+                                that creates excellence
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Practical
+                                wisdom that improves lives
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/libra.png" class="bg-libra-pastel mx-3" alt="libra Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">LIBRA (September 23 - October 22)</h3>
+                            <p>Dancing in perfect balance, you're the cosmic diplomat guided by Venus, the planet of
+                                harmony and beauty. As the zodiac's peacemaker, you weave discord into harmony with your
+                                natural grace and charm.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Harmoniser Spirit:</h4>
+                        <p>While your desire for harmony can sometimes lead to indecision, it's this very balance that
+                            makes you such a unifying force. When you wield your diplomatic powers mindfully, you create
+                            peace and beauty in equal measure.
+                        </p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Libra horoscope
+                        </a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Air Element Gifts:
+
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Diplomatic
+                                skill that bridges differences
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Artistic eye
+                                that creates beauty
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Social grace
+                                that charms hearts
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Practical
+                                wisdom that improves lives
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/scorpio.png" class="bg-scorpio-pastel mx-3" alt="scorpio Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">SCORPIO (October 23 - November 21)</h3>
+                            <p>Delving into life's deepest mysteries, you're the cosmic investigator guided by Pluto and
+                                Mars, planets of transformation and power. As the zodiac's most intense sign, you pierce
+                                through surface illusions to uncover hidden truths.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Phoenix Spirit:
+                        </h4>
+                        <p>While your emotional depths can sometimes lead to obsessive thinking, it's this very
+                            intensity that makes you such a transformative force. When you channel your power mindfully,
+                            you have the ability to heal and regenerate.
+                        </p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Scorpio horoscope
+                        </a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Water Element Gifts:
+
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Magnetic
+                                intensity that draws others close
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Penetrating
+                                insight that sees through facades
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Powerful
+                                resilience that rises from challenges
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Deep passion
+                                that transforms lives
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/sagitarius.png" class="bg-sagitarius-pastel mx-3"
+                                alt="sagitarius Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">SAGITTARIUS (November 22 - December 21)
+                            </h3>
+                            <p>Aiming your bow at distant horizons, you're the cosmic explorer guided by Jupiter, planet
+                                of expansion and wisdom. As the zodiac's adventurer, you chase knowledge and truth
+                                across physical and philosophical landscapes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Explorer Spirit:
+                        </h4>
+                        <p>While your love of freedom can sometimes make you restless, it's this very quest that makes
+                            you such an inspiring force. When you direct your arrows mindfully, you lead others to
+                            broader perspectives and greater understanding.
+                        </p>
+                        <a href="#" class="horoscope-link">Click here for your free daily Australian Sagittarius
+                            horoscope
+                        </a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Fire Element Gifts:
+
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px">Boundless
+                                optimism that inspires hope
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Adventurous
+                                spirit that seeks truth
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Philosophical
+                                mind that expands horizons
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Joyful energy
+                                that lifts spirits
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/capricorn.png" class="bg-capricorn-pastel mx-3"
+                                alt="capricorn Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">CAPRICORN (December 22 - January 19)
+
+                            </h3>
+                            <p>
+                                Climbing steadily toward your goals, you're the cosmic achiever guided by Saturn, planet
+                                of discipline and structure. As the zodiac's master builder, you transform ambition into
+                                lasting accomplishment through patient persistence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Builder Spirit:
+                        </h4>
+                        <p>While your drive for success can sometimes make you too serious, it's this very determination
+                            that makes you such a reliable force. When you apply your ambition mindfully, you create
+                            legacies that stand the test of time.
+                        </p>
+                        <a href="#" class="horoscope-link">
+                            Click here for your free daily Australian Capricorn horoscope
+                        </a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Earth Element Gifts:
+
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px">Unwavering
+                                ambition that reaches summits
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Strategic
+                                mind that plans for success
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px">Strong
+                                integrity that builds trust
+
+
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Natural
+                                authority that commands respect
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/aquarius.png" class="bg-aquarius-pastel mx-3"
+                                alt="aquarius Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">AQUARIUS (January 20 - February 18)
+
+                            </h3>
+                            <p>
+                                Climbing steadily toward your goals, you're the cosmic achiever guided by Saturn, planet
+                                of discipline and structure. As the zodiac's master builder, you transform ambition into
+                                lasting accomplishment through patient persistence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Innovator Spirit:
+                        </h4>
+                        <p>
+                            While your unconventional nature can sometimes make you seem detached, it's this very
+                            uniqueness that makes you such a progressive force. When you channel your revolutionary
+                            ideas mindfully, you have the power to transform society for the better.
+
+                        </p>
+                        <a href="#" class="horoscope-link">
+                            Click here for your free daily Australian Aquarius horoscope
+                        </a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Air Element Gifts:
+
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px">Brilliant
+                                originality that sparks innovation
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Humanitarian
+                                spirit that fights for progress
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px">Independent
+                                mind that breaks boundaries
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Visionary
+                                insight that glimpses the future
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="horoscope-card mb-4">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="horoscope-header">
+                            <img src="assets/horoscope/pieces.png" class="bg-pisces-pastel mx-3" alt="aquarius Icon">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="horoscope-content">
+                            <h3 class="fw-bold">PISCES (February 19 - March 20)
+
+                            </h3>
+                            <p>
+                                Swimming in the cosmic ocean, you're the mystical dreamer guided by Neptune, planet of
+                                inspiration and spirituality. As the zodiac's empath, you dissolve boundaries between
+                                reality and imagination, self and other.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="horoscope-sections">
+                    <div class="horoscope-section border-right-12">
+                        <h4>Your Mystic Spirit:
+                        </h4>
+                        <p>
+                            While your sensitivity can sometimes make you feel overwhelmed, it's this very openness that
+                            makes you such a compassionate force. When you direct your intuitive powers mindfully, you
+                            help others connect with their higher selves.
+                        </p>
+                        <a href="#" class="horoscope-link">
+                            Click here for your free daily Australian Pisces horoscope
+                        </a>
+                    </div>
+
+                    <div class="horoscope-section">
+                        <h4>Your Water Element Gifts:
+                        </h4>
+                        <ul class="horoscope-list fw-bold">
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px">Boundless
+                                imagination that creates magic
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Deep empathy
+                                that heals hearts
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Artistic
+                                vision that inspires beauty
+                            </li>
+                            <li><img src="assets/icon/rounded-yes.png" alt="rounded-yes.png" width="20px"> Spiritual
+                                wisdom that transcends limits
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="bg-dark text-white p-3">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <ul class="list-unstyled">
+                        <li class="py-2"><a href="#" class="text-white text-decoration-none">Privacy Policy </a></li>
+                        <li class="py-2"><a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                        </li>
+                        <li class="py-2"><a href="#" class="text-white text-decoration-none">Terms and Rules</a>
+                        </li>
+                        <li class="py-2"><a href="#" class="text-white text-decoration-none">Editorial Policy </a></li>
+                        <li class="py-2"><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4 text-uppercase">About Us</h5>
+                    <p class="text-white">
+                        YourLifeChoices is Australia's most established and trusted digital publication for the
+                        50+ audience, with a core focus on helping Australians navigate midlife and the
+                        retirement landscape.
+
+                        Since 2000, YourLifeChoices has been providing Australians with essential news, articles
+                        and retirement resources - and membership is FREE!
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-center">
+                        <div>
+                            <h4 class="fw-bold text-white mb-4 text-uppercase">
+                                FOLLOW US
+                            </h4>
+                            <div class="d-flex">
+                                <img src="assets/icon/fb-icon-black.png" alt="fb-icon-black.png">
+                                <img src="assets/icon/x-icon.png" alt="x" class="mx-4">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const searchButton = document.getElementById('search-button')
+        const searchForm = document.getElementById('search-form')
+        searchButton.addEventListener('click', (e) => {
+            searchForm.classList.toggle('d-none')
+        })
+    </script>
+</body>
+
+</html>

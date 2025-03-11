@@ -114,6 +114,9 @@
   background-color: #ed1b33;
   border-color: #ed1b33;
 }
+.fs-10 {
+  font-size: 12px !important;
+}
 .mt-100 {
   margin-top: 100% !important;
 }

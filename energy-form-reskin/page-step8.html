@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .accordion-item {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-button {
+            background: white;
+            color: #000;
+            font-weight: bold;
+            box-shadow: none;
+            padding: 15px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #fff;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-body {
+            background: #fff;
+            padding: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Remove default bootstrap accordion icon */
+        .accordion-button::after {
+            display: none;
+        }
+
+        /* Add custom icon */
+        .custom-icon {
+            margin-left: auto;
+            width: 24px;
+            height: 24px;
+            background-color: #ff3a3a;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .border-bottom-black {
+            border-bottom: 1px solid rgb(212, 212, 212);
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="bg-light py-2 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img src="../assets/ylc-logo-none-tagline.png" alt="YourLifeChoices" height="30">
+            <span class="d-flex align-items-center">
+                <img class="mx-3" src="../assets/icon/el_phone-alt.png" alt="../assets/icon/el_phone-alt.png"
+                    height="32" width="32">
+                <p class="fw-bold text-dark mb-0"> 1300 163 402</p>
+            </span>
+        </div>
+    </header>
+
+
+    <!-- Info Section -->
+    <section class="info-section text-center">
+        <div class="bg-light-grey">
+            <div class="container">
+
+                <h4 class="mb-2 pt-5 georgia-font">Your <strong>energy specialist</strong> has been notified of your
+                </h4>
+                <h4 class="georgia-font">
+                    interest and they will <strong>be in contact shortly.</strong>
+                </h4>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <a href="#" class="btn btn-danger fw-bold my-4">JOIN YOUR LIFE CHOICES</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="container my-5">
+                            <div class="row">
+                                <div class="card rounded-4 border-0">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="text-center">
+                                                    <img src="../assets/icon/rounded-yes.png" alt="rounded-yes.png">
+                                                    <p>We compare and select the best energy plans in your area.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="text-center">
+                                                    <img src="../assets/icon/rounded-yes.png" alt="rounded-yes.png">
+                                                    <p>We get in touch with you to talk you through your options.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="text-center">
+                                                    <img src="../assets/icon/rounded-yes.png" alt="rounded-yes.png">
+                                                    <p>You choose an energy offer, our process is quick, easy and free.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h4 class="georgia-font">Electricity and Gas <strong>FAQs</strong></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5 faq-container mb-5">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item rounded-4">
+                        <h2 class="accordion-header border-bottom-black" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How does Compare Club Energy work?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-up"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We bring together a network of energy suppliers and compare their offered rates on
+                                different
+                                electricity and gas plans. We put the power in your hands to decide which price is the
+                                best and
+                                provide the...
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header border-bottom-black" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How much does it cost to switch energy suppliers?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Switching energy suppliers is usually free, but some contracts may have exit fees.
+                                Always check
+                                the terms before switching.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header border-bottom-black" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                How long does it take to switch energy suppliers?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                The time to switch suppliers depends on the provider and your contract, but it generally
+                                takes a
+                                few days to a few weeks.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header border-bottom-black" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Do electricity prices vary from state to state?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, electricity prices do vary from state to state due to different regulations,
+                                distribution
+                                networks,
+                                and market conditions in each area.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header border-bottom-black" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Why should I switch energy suppliers?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Switching energy suppliers can help you save money, get better customer service, access
+                                green
+                                energy options,
+                                or take advantage of special promotions and incentives.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header border-bottom-black" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                What is an energy tariff?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                An energy tariff is the rate plan that determines how much you pay for your electricity
+                                or gas.
+                                It includes the unit rate (cost per kWh) and often a daily supply charge.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header border-bottom-black" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                I am signed up to a solar feed-in tariff. Will I still be eligible when I switch
+                                suppliers?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                In most cases, yes. However, the new supplier may offer a different feed-in rate, so
+                                it's
+                                important to
+                                compare solar feed-in tariffs when switching suppliers.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header border-bottom-black" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                I have a business. Can you still help me switch energy suppliers?
+                                <div class="custom-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we can help businesses switch energy suppliers. Business energy contracts often
+                                differ from
+                                residential
+                                ones, but our service can assist you in finding competitive rates.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+    <footer class="bg-dark text-white p-3">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="../assets/logo-light.png" alt="assets/logo-light.png" class="img-fluid mb-4">
+                    <p>YourLifeChoices is Australia’s most established and trusted digital
+                        publication for the 50+
+                        audience, with a core focus on helping Australians navigate midlife and the retirement
+                        landscape.
+
+                        Since 2000, YourLifeChoices has been providing Australians with essential news, articles and
+                        retirement resources – and membership is FREE!
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex">
+                        <div>
+                            <h5 class="fw-bold mb-4">Main Menu</h5>
+                            <ul class="list-unstyled">
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a>
+                                </li>
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Terms and Rules</a>
+                                </li>
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="ms-5">
+                            <h5 class="fw-bold mb-4">User Menu</h5>
+                            <ul class="list-unstyled">
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Profile</a></li>
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Account Details</a>
+                                </li>
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Newsfeed</a>
+                                </li>
+                                <li class="py-2"><a href="#" class="text-white text-decoration-none">Log Out</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4">Enjoyed Reading our Story?</h5>
+                    <p class="mb-4">Share this forum to your loved ones, Lorem ipsum dolor sit amet, consectetur
+                        adipiscing.</p>
+                    <a href="#" class="btn btn-outline-light">
+                        <img src="../assets/icon/fluent_share-ios-24-filled.png"
+                            alt="assets/icon/fluent_share-ios-24-filled.png">
+                        Share
+                    </a>
+
+                </div>
+            </div>
+            <hr>
+            <p>
+                No information we provide constitutes financial advice. The YLC is a free resource, supported by
+                advertising. If you see an asterisk (*) next to one of our links, it means we have a commercial
+                relationship with that business. The YLC is not affiliated with any State and Territory governments. If
+                you are looking for the official Seniors card programs,
+            </p>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script to toggle the chevron direction when accordion items are clicked
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const icon = this.querySelector('.custom-icon i');
+
+                    if (this.classList.contains('collapsed')) {
+                        // If accordion is closed and about to open
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        // If accordion is open and about to close
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
